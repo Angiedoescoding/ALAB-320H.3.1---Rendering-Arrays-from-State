@@ -66,19 +66,22 @@ export default function App() {
     ]
   });
 
+ // Switching to using map() to render the Learner components and creating a copy of an array
 
-  const learners = [];
-  learderData.learners.forEach((learner, index) => {  //iterating through each learner (each element in the "learners" array that we declaired as LearnerData); (learner, index) -- learner -each learner object of the array; index - the index of the current learner object in the array
-    learners.push(    // inside the forEach we are pushing elements into the array (generating them in the <Learner /> component)
-      <Learner key={ index } learner={ learner } />   // creating an instance of the <Learner> component for each learner object in the array. It assigns a key prop to each component, using the index of the current learner object as its value. And it passes the learner object as a prop to the <Learner> component, so that it can access the learner's data.
-    )
-  })
+  // const learners = [];     
+  // learderData.learners.forEach((learner, index) => {  //iterating through each learner (each element in the "learners" array that we declaired as LearnerData); (learner, index) -- learner -each learner object of the array; index - the index of the current learner object in the array
+  //   learners.push(    // inside the forEach we are pushing elements into the array (generating them in the <Learner /> component)
+  //     <Learner key={ index } learner={ learner } />   // creating an instance of the <Learner> component for each learner object in the array. It assigns a key prop to each component, using the index of the current learner object as its value. And it passes the learner object as a prop to the <Learner> component, so that it can access the learner's data.
+  //   )
+  // })
 
 
 
   return (
     <>
-      { learners }
+      { learnerData.learners.map((learner, index) => (
+        <Learner key={index} learners={learner}  />
+      )) }
     </>
   );
 }
