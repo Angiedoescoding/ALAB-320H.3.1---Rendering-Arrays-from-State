@@ -3,7 +3,7 @@ import './App.css'
 import Learner from './Learner';
 
 export default function App() {
-  const [learderData] = useState({
+  const [learderData, setLearnerData] = useState({
     learners: [
       {
         name: 'Cait Yomorta',
